@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Permite mostrar tildes y caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adapta la página a celulares -->
+    <title>Clima actual</title> <!-- Título de la pestaña -->
+    <link rel="stylesheet" href="style.css"> <!-- Conecta los estilos CSS -->
+</head>
+<body>
+    <main class="contenedor"> <!-- Contenido principal -->
+        <header class="encabezado">
+            <p class="etiqueta">CONSULTA DEL TIEMPO</p>
+            <h1>El clima de hoy</h1>
+            <p class="subtitulo">Consulta el tiempo de cualquier lugar.</p>
+        </header>
+
+        <form id="formulario-busqueda" class="busqueda"> <!-- Formulario para buscar ciudades -->
+            <label for="ciudad">Ciudad o ubicación</label>
+            <div class="fila-busqueda">
+                <input id="ciudad" type="text" placeholder="Ej. Sogamoso" autocomplete="off" required>
+                <button type="submit">Buscar</button>
+            </div>
+        </form>
+
+        <p id="mensaje" class="mensaje" role="status">Buscando tu ubicación...</p> <!-- Mensajes de carga o error -->
+
+        <section id="panel-clima" class="oculto"> <!-- Se muestra cuando llegan los datos -->
+            <div class="tarjeta-principal">
+                <div class="lugar">
+                    <div>
+                        <p class="etiqueta">CLIMA ACTUAL</p>
+                        <h2 id="nombre-lugar">--</h2>
+                        <p id="fecha-actual" class="fecha">--</p>
+                    </div>
+                    <div class="icono-clima" id="icono-actual" aria-hidden="true">☀️</div>
+                </div>
+
+                <div class="temperatura">
+                    <span id="temperatura">--</span><span class="grados">°C</span>
+                </div>
+                <p id="descripcion" class="descripcion">--</p>
+
+                <div class="datos">
+                    <article class="dato">
+                        <span class="dato-icono">💨</span>
+                        <div><p>Viento</p><strong id="viento">--</strong></div>
+                    </article>
+                    <article class="dato">
+                        <span class="dato-icono">🌧️</span>
+                        <div><p>Prob. de lluvia</p><strong id="lluvia">--</strong></div>
+                    </article>
+                </div>
+            </div>
+
+            <section class="seccion-horas">
+                <div class="titulo-seccion">
+                    <div>
+                        <p class="etiqueta">PRONÓSTICO</p>
+                        <h2>Horas anteriores y próximas</h2>
+                    </div>
+                    <button id="actualizar" class="boton-secundario" type="button" aria-label="Actualizar el clima">↻ Actualizar</button>
+                </div>
+                <p class="ayuda">Consulta las 24 horas anteriores y las próximas 24 horas.</p>
+                <div id="lista-horas" class="lista-horas"></div>
+            </section>
+        </section>
+
+        <footer>Datos meteorológicos de Open-Meteo</footer>
+    </main>
+
+    <script src="script.js"></script> <!-- Conecta el JavaScript al final para cargar primero el HTML -->
+</body>
+</html>

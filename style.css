@@ -1,0 +1,286 @@
+/* Estilos generales de la página */
+* {
+    box-sizing: border-box; /* Incluye el padding dentro del tamaño */
+}
+
+body {
+    margin: 0; /* Quita el margen predeterminado */
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 35px 16px; /* Deja espacio alrededor del contenido */
+    font-family: Arial, sans-serif; /* Usa una letra sencilla */
+    color: #203047; /* Color principal del texto */
+    background: linear-gradient(135deg, #e9f3ff, #f7f9fc); /* Fondo suave */
+}
+
+.contenedor {
+    width: 100%; /* Usa el ancho disponible */
+    max-width: 850px; /* Evita que sea demasiado ancho */
+    margin: 0 auto; /* Centra el contenido */
+}
+
+.encabezado {
+    margin-bottom: 28px; /* Separa el título del formulario */
+}
+
+.etiqueta {
+    margin: 0 0 8px; /* Ajusta el espacio */
+    color: #3976b9; /* Destaca el texto pequeño */
+    font-size: 11px; /* Tamaño pequeño */
+    font-weight: bold; /* Resalta la etiqueta */
+    letter-spacing: 1.5px; /* Separa las letras */
+}
+
+h1, h2, p {
+    margin-top: 0; /* Evita espacios superiores innecesarios */
+}
+
+h1 {
+    margin-bottom: 8px; /* Separa el título del subtítulo */
+    font-size: clamp(28px, 5vw, 40px); /* Ajusta el tamaño según pantalla */
+}
+
+.subtitulo, .ayuda, .fecha {
+    color: #718096; /* Texto secundario */
+}
+
+.busqueda {
+    margin-bottom: 14px; /* Separa el formulario del mensaje */
+}
+
+.busqueda label {
+    display: block; /* Coloca la etiqueta en su propia línea */
+    margin-bottom: 8px; /* Separa la etiqueta del campo */
+    font-weight: bold; /* Resalta la etiqueta */
+    font-size: 14px; /* Tamaño de la etiqueta */
+}
+
+.fila-busqueda {
+    display: flex; /* Alinea el campo y el botón */
+    gap: 10px; /* Deja espacio entre ambos */
+}
+
+input {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 0; /* Evita desbordamientos */
+    padding: 14px; /* Espacio interior */
+    border: 1px solid #d7e0eb; /* Borde suave */
+    border-radius: 10px; /* Esquinas redondeadas */
+    font-size: 15px; /* Texto legible */
+    outline: none; /* Quita el contorno predeterminado */
+}
+
+input:focus {
+    border-color: #3976b9; /* Resalta el campo seleccionado */
+    box-shadow: 0 0 0 3px #3976b922; /* Muestra el enfoque */
+}
+
+button {
+    padding: 13px 20px; /* Tamaño interior del botón */
+    border: 0; /* Quita el borde */
+    border-radius: 10px; /* Redondea las esquinas */
+    color: white; /* Texto blanco */
+    background: #3976b9; /* Fondo azul */
+    font-weight: bold; /* Resalta el texto */
+    cursor: pointer; /* Muestra que se puede pulsar */
+}
+
+button:hover {
+    background: #285f9a; /* Oscurece el botón al pasar el cursor */
+}
+
+button:disabled {
+    opacity: 0.6; /* Indica que está desactivado */
+    cursor: wait; /* Cambia el cursor durante la carga */
+}
+
+.mensaje {
+    min-height: 22px; /* Reserva espacio para mensajes */
+    color: #64748b; /* Color del mensaje */
+    font-size: 14px; /* Tamaño del mensaje */
+}
+
+.mensaje.error {
+    color: #c0392b; /* Muestra los errores en rojo */
+}
+
+.oculto {
+    display: none; /* Oculta el panel hasta tener información */
+}
+
+.tarjeta-principal {
+    padding: 28px; /* Espacio interior de la tarjeta */
+    border-radius: 20px; /* Esquinas redondeadas */
+    color: white; /* Texto blanco */
+    background: linear-gradient(135deg, #3976b9, #244b78); /* Fondo azul */
+    box-shadow: 0 12px 30px #244b781c; /* Sombra suave */
+}
+
+.lugar {
+    display: flex; /* Alinea lugar e icono */
+    justify-content: space-between; /* Los separa */
+    align-items: center; /* Centra verticalmente */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.lugar .etiqueta {
+    color: #d7eaff; /* Etiqueta clara sobre fondo azul */
+}
+
+.lugar h2 {
+    margin-bottom: 5px; /* Separa el nombre de la fecha */
+    font-size: 25px; /* Tamaño del nombre */
+}
+
+.fecha {
+    margin-bottom: 0; /* Quita el margen inferior */
+    color: #d7eaff; /* Fecha clara */
+    font-size: 13px; /* Texto pequeño */
+}
+
+.icono-clima {
+    font-size: 55px; /* Tamaño del icono */
+}
+
+.temperatura {
+    margin-top: 20px; /* Separa la temperatura */
+    font-size: clamp(55px, 10vw, 76px); /* Temperatura grande y adaptable */
+    font-weight: bold; /* Resalta la temperatura */
+    line-height: 1; /* Ajusta la altura de línea */
+}
+
+.grados {
+    font-size: 30px; /* Hace más pequeño el símbolo */
+    vertical-align: top; /* Sube el símbolo */
+}
+
+.descripcion {
+    margin: 10px 0 25px; /* Separa la descripción */
+    color: #e3efff; /* Texto claro */
+    font-size: 17px; /* Tamaño de descripción */
+}
+
+.datos {
+    display: grid; /* Organiza los datos en columnas */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 12px; /* Espacio entre datos */
+}
+
+.dato {
+    display: flex; /* Alinea icono y texto */
+    align-items: center; /* Centra verticalmente */
+    gap: 12px; /* Separa icono y texto */
+    padding: 14px; /* Espacio interior */
+    border: 1px solid #ffffff35; /* Borde transparente */
+    border-radius: 12px; /* Esquinas redondeadas */
+    background: #ffffff12; /* Fondo ligeramente transparente */
+}
+
+.dato-icono {
+    font-size: 25px; /* Tamaño del emoji */
+}
+
+.dato p {
+    margin-bottom: 5px; /* Separa etiqueta y valor */
+    color: #d7eaff; /* Etiqueta clara */
+    font-size: 12px; /* Tamaño pequeño */
+}
+
+.dato strong {
+    font-size: 17px; /* Resalta el valor */
+}
+
+.seccion-horas {
+    margin-top: 32px; /* Separa el pronóstico de la tarjeta */
+}
+
+.titulo-seccion {
+    display: flex; /* Alinea título y botón */
+    justify-content: space-between; /* Los coloca en extremos */
+    align-items: center; /* Centra verticalmente */
+    gap: 12px; /* Espacio entre elementos */
+}
+
+.titulo-seccion h2 {
+    margin-bottom: 0; /* Quita el margen inferior */
+    font-size: 21px; /* Tamaño del título */
+}
+
+.boton-secundario {
+    padding: 10px 13px; /* Tamaño del botón */
+    color: #3976b9; /* Texto azul */
+    border: 1px solid #cbdced; /* Borde azul claro */
+    background: white; /* Fondo blanco */
+    white-space: nowrap; /* Evita que el texto se parta */
+}
+
+.boton-secundario:hover {
+    color: white; /* Texto blanco al pasar el cursor */
+}
+
+.ayuda {
+    margin: 9px 0 15px; /* Espacio del texto de ayuda */
+    font-size: 13px; /* Tamaño pequeño */
+}
+
+.lista-horas {
+    display: grid; /* Organiza las horas en tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); /* Columnas adaptables */
+    gap: 10px; /* Espacio entre tarjetas */
+}
+
+.hora {
+    padding: 14px 9px; /* Espacio interior */
+    text-align: center; /* Centra el contenido */
+    border: 1px solid #e1e8f0; /* Borde suave */
+    border-radius: 12px; /* Esquinas redondeadas */
+    background: white; /* Fondo blanco */
+}
+
+.hora small {
+    display: block; /* Cada dato en su línea */
+    color: #718096; /* Texto secundario */
+    font-size: 11px; /* Tamaño pequeño */
+}
+
+.hora .emoji {
+    display: block; /* Icono en su propia línea */
+    margin: 9px 0; /* Espacio alrededor del icono */
+    font-size: 25px; /* Tamaño del icono */
+}
+
+.hora strong {
+    display: block; /* Temperatura en su propia línea */
+    margin-bottom: 8px; /* Separa los datos */
+    font-size: 17px; /* Resalta la temperatura */
+}
+
+footer {
+    margin-top: 30px; /* Separa el pie de página */
+    color: #8794a5; /* Color discreto */
+    text-align: center; /* Centra el texto */
+    font-size: 12px; /* Tamaño pequeño */
+}
+
+/* Ajustes para celulares */
+@media (max-width: 520px) {
+    body {
+        padding: 25px 12px; /* Reduce los márgenes */
+    }
+
+    .tarjeta-principal {
+        padding: 21px; /* Reduce el espacio interior */
+    }
+
+    .datos {
+        grid-template-columns: 1fr; /* Coloca los datos en una columna */
+    }
+
+    .titulo-seccion {
+        align-items: flex-start; /* Alinea arriba en pantallas pequeñas */
+        flex-direction: column; /* Coloca título y botón uno debajo del otro */
+    }
+
+    .fila-busqueda button {
+        padding: 12px 14px; /* Ajusta el botón de búsqueda */
+    }
+}
